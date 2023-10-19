@@ -22,6 +22,6 @@ fi
 
 # Trigger upgrade
 if [ "$1" == "up" ] ; then
-    weterm --title systemupdate sh -c 'yay -Syu --noconfirm'
+    kitty -e yay -Syu --noconfirm
 fi
 
