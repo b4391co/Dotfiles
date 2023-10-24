@@ -309,15 +309,15 @@ sh launch.sh
         "key": "ctrl+k ctrl+o",
         "command": "-workbench.action.files.openFolder",
         "when": "openFolderWorkspaceSupport"
-    }
+    },
     {
         "key": "ctrl+j ctrl+s",
         "command": "type",
         "args": {
-            "text": "Scanner scan = new Scanner(System.in);"
+            "text": "Scanner sc = new Scanner(System.in);"
         },
         "when": "editorTextFocus && !editorReadonly"
-    }
+    },
     {
         "key": "ctrl+j ctrl+shift+s",
         "command": "type",
@@ -325,6 +325,23 @@ sh launch.sh
             "text": "import java.util.Scanner;"
         },
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+d d",
+        "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+d s",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+d a",
+        "command": "workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
     }
 ]
 ```
