@@ -531,7 +531,6 @@ sh launch.sh
     "codesnap.shutterAction": "copy",
     "codesnap.target": "window",
     "codesnap.transparentBackground": true,
-    "VSCodeNotion.accessToken": "secret_lnfV1ugNHqDpCpN2JgYkDJ2kp7qqn5lXlvoj3S5a991",
     "liveServer.settings.donotShowInfoMsg": true,
     "window.zoomLevel": 0.4,
     "projectManager.git.baseFolders": [
