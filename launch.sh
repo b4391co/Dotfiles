@@ -177,7 +177,7 @@ source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
             sudo curl -o /usr/share/webshells/php/p0wny.php https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php
 
             # osint
-            yay -S --noconfirm --needed blackarch/sherlock gobuster bind blackarch/osint-spy blackarch/maltego blackarch/h8mail extra/sn0int extra/perl-image-exiftool aur/jexiftoolgui
+            yay -S --noconfirm --needed blackarch/osrframework blackarch/sherlock gobuster bind blackarch/osint-spy blackarch/maltego blackarch/h8mail extra/sn0int extra/perl-image-exiftool aur/jexiftoolgui
             pip install pandas requests_futures torrequest netifaces
             
             #db
