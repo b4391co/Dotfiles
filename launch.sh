@@ -46,7 +46,7 @@ read selec
             printf "[ + ] ( 4"; if [ $app = '4' ] ; then printf '*'; fi; printf " ) - vscode\n"
             printf "[ + ] ( 5"; if [ $app = '5' ] ; then printf '*'; fi; printf " ) - Hacking/Networks [blackarch]\n"
             printf "[ + ] ( 6"; if [ $app = '6' ] ; then printf '*'; fi; printf " ) - Docker\n"
-            printf "[ + ] ( 7"; if [ $app = '7' ] ; then printf '*'; fi; printf " ) - GNS 3\n"
+            printf "[ + ] ( 7"; if [ $app = '7' ] ; then printf '*'; fi; printf " ) - Programacion\n"
             printf "[ + ] ( T"; if [ $app = 'T' ] ; then printf '*'; fi; printf " ) - All\n"
             printf "[ + ] ( X"; if [ $app = 'X' ] ; then printf '*'; fi; printf " ) - close\n"
             echo ""
@@ -290,18 +290,8 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         if [ $app = "7" ]
         then
             cd $pwd 
-            yay -S qemu qemu-full docker vpcs dynamips libvirt --noconfirm --needed
-            
-            yay -S gns3-server gns3-gui --noconfirm --needed
-            sudo brctl addbr virbr0
-            sudo ip link set virbr0 up
-            git clone https://github.com/GNS3/ubridge
-            cd ubridge 
-            make
-            sudo make install
-            cd ..
-            rm -rfv ubridge
-            echo alias virbr='sudo brctl addbr virbr0;sudo ip link set virbr0 up' ~/.zshrc
+            # PHP - Composer
+            yay -S --noconfirm --needed aur/mongodb-compass extra/composer php-mongodb
         fi
     done
     while [ $selec = "2" ]
