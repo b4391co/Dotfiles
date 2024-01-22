@@ -260,6 +260,12 @@ wordlist = [
             rmf dnspython
             pip install dnspython
             sudo pacman -S --noconfirm --needed inetutils
+
+            #TraxOsint
+            git clone https://github.com/N0rz3/TraxOsint.git
+            cd ./TraxOsint
+            pip3 install -r requirements.txt
+            cd ..
             #Osintui
             
             if [ ! -f ~/.osintui/config/config.toml ]; then
