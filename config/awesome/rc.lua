@@ -431,8 +431,6 @@ end,
     {description = "rofi", group = "apps"}),
     awful.key({ super,           }, "l", function () awful.spawn("i3lock-fancy") end,
     {description = "i3lock", group = "apps"}),
-    awful.key({ alt,           }, "p", function () awful.spawn.with_shell("~/.config/polybar/launch.sh") end,
-    {description = "i3lock", group = "apps"}),
 
     awful.key({ alt, "Control" }, "d",     function () awful.tag.incmwfact( 0.02)          end,
               {description = "increase master width factor", group = "window"}),
