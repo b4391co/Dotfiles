@@ -18,7 +18,28 @@
 <!-- /vscode-markdown-toc -->
 
 
+<details>
+<summary> <i class="fa-solid fa-triangle-exclamation"></i> ASUS <i class="fa-solid fa-triangle-exclamation"></i> </summary>
+    <p><i class="fa-solid fa-music"></i>Sonido<i class="fa-solid fa-music"></i></p>
 
+Do:
+
+```
+sudo nvim /etc/default/grub
+```
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+// to:
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash snd_hda_intel.dmic_detect=0"
+```
+Then do:
+
+```
+sudo update-grub
+```
+
+and Reboot.
+</details>
 
 ##  1. <a name='Info'></a>Info
 
