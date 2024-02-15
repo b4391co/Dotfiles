@@ -85,7 +85,7 @@ read selec
             printf "[ + ] ( 2 ) - Instalacion en VM\n"
             echo ""
             read realVM
-            sudo pacman -S neovim wezterm net-tools vi lsd vivaldi man xorg-xbacklight --noconfirm --needed
+            sudo pacman -S neovim wezterm net-tools vi lsd vivaldi brave-bin man xorg-xbacklight --noconfirm --needed
             sudo pacman -S rclone openresolv systemd-resolvconf cron ranger fuse --noconfirm --needed
             sudo pacman -S neofetch sshfs vifm curl htop wget neofetch tree fzf python-pip npm ranger ueberzug ripgrep fd universal-ctags --noconfirm --needed
             yay -S flameshot fastfetch python2 mlocate aur/bat-cat-git --noconfirm --needed
@@ -114,9 +114,9 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
                 sudo sh /mnt/VBoxLinuxAdditions.run
                 sudo umount /mnt
             fi
-        fi  
+        fi
         if [ $app = "3" ]
-        then    
+        then
             cd $pwd
             sudo pacman -S zsh --noconfirm --needed
             sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -143,7 +143,7 @@ source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
         fi
         if [ $app = "4" ]
         then
-            yay -S --noconfirm aur/visual-studio-code-bin           
+            yay -S --noconfirm aur/visual-studio-code-bin
         fi
         if [ $app = "X" ]
         then
@@ -388,6 +388,7 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         if [ $app = "2" ] 
         then
             yay -S --noconfirm --needed hyprland dolphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
+            yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub
             cp config/* ~/.config/ -r
         fi
         if [ $app = "3" ]
