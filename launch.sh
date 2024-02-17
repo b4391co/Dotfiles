@@ -72,10 +72,10 @@ read selec
             makepkg --noconfirm --needed -si
             cd $pwd
             # blackarch
-            chmod a+x .blackarch/blackarch.sh
-            sudo sh .blackarch/blackarch.sh
+            chmod a+x strap.sh
+            sudo sh strap.sh
             cd $pwd
-        fi        
+        fi
         if [ $app = "2" ]
         then
             cd $pwd
@@ -350,13 +350,13 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             sudo cp -r .config/awesome/icons/* /usr/share/awesome/themes/default/titlebar
             
             monitorPrincipal=`xrandr | grep connected | awk '{print $1}'`
-            sed -i "s/DP-4/$monitorPrincipal/g" ~/.config/polybar/current.ini 
-            sed -i "s/DP-4/$monitorPrincipal/g" ~/.config/polybar/workspace.ini 
+            sed -i "s/DP-4/$monitorPrincipal/g" ~/.config/polybar/current.ini
+            sed -i "s/DP-4/$monitorPrincipal/g" ~/.config/polybar/workspace.ini
             if [ $realVM = "2" ]
             then
                 mv ~/.config/picomVM ~/.config/picom.conf
-                mv ~/.config/polybar/currentVM ~/.config/polybar/current.ini 
-                mv ~/.config/polybar/workspaceVM ~/.config/polybar/workspace.ini 
+                mv ~/.config/polybar/currentVM ~/.config/polybar/current.ini
+                mv ~/.config/polybar/workspaceVM ~/.config/polybar/workspace.ini
             fi
 
             
@@ -385,7 +385,7 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             cd ..
             rm -rfv rofi-themes-collection
         fi
-        if [ $app = "2" ] 
+        if [ $app = "2" ]
         then
             yay -S --noconfirm --needed hyprland dolphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
             yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub extra/dunst
