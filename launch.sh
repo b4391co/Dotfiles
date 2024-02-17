@@ -388,7 +388,7 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         if [ $app = "2" ] 
         then
             yay -S --noconfirm --needed hyprland dolphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
-            yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub
+            yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub extra/dunst
             cp config/* ~/.config/ -r
         fi
         if [ $app = "3" ]
