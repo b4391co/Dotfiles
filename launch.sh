@@ -155,7 +155,7 @@ source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
             cd ~/apps
 
             # Utilidades de kali Completa
-            sudo pacman -S --noconfirm --needed aircrack-ng wpscan nmap ace ipv6toolkit exploitdb arp-scan dmitry ike-scan legion maltego netdiscover p0f recon-ng d spiderfoot \
+            sudo pacman -S --noconfirm --needed aircrack-ng wpscan nmap ace ipv6toolkit exploitdb arp-scan dmitry ike-scan legion maltego netdiscover p0f recon-ng spiderfoot \
             dnsenum dnsmap dnsrecon dnstracer dnswalk fierce maltego spiderfoot twofi 0trace irpas netmask nbtscan smbmap smtp-user-enum swaks braa ssldump sslh sslscan tlssled \
             arping fping hping3 masscan unicornscan xprobe2 lbd wafw00f lynis nikto dhcpig iaxflood siege t50 cisco-auditing-tool cisco-global-exploiter cisco-ocs cisco-torch \
             copy-router-config yersinia bed siparmyknife spike enumiax iaxflood rtpflood rtpinsertsound rtpmixsound sctpscan sipp burpsuite commix httrack. paros skipfish sqlmap \
@@ -163,10 +163,10 @@ source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
             sqldic sqlmap sqlninja tnscmd10g cewl crunch hashcat john medusa ophcrack rainbowcrack rcracki-mt wordlists hydra patator thc-pptp-bruter chntpw cmospwd fcrackzip \
             hashid hash-identifier ophcrack samdump2 sipcrack sucrack smbmap rsmangler statsgen chirp cowpatty fern-wifi-cracker kismet mdk3 mfoc mfterm pixiewps wifite hackrf \
             bluelog blueranger bluesnarfer btscanner redfang spooftooph mfcuk asleap cowpatty eapmd5pass wifi-honey bytecode-viewer clang dex2jar edb-debugger jadx javasnoop \
-            radare2 beef sqlmap termineter driftnet ettercap-graphical macchanger mitmproxy netsniff-ng responder wireshark darkstat dnschef dsniff hexinject sslsniff tcpflow \
+            radare2 beef sqlmap termineter driftnet ettercap-graphical macchanger mitmproxy netsniff-ng responder wireshark wireshark-qt darkstat dnschef dsniff hexinject sslsniff tcpflow \
             rebind sniffjoke sslsplit tcpreplay yersinia backdoor-factory nishang proxychains4 weevely cymothoa sbd laudanum iodine miredo proxytunnel pwnat sslh stunnel4 udptunnel \
             autopsy binwalk chkrootkit foremost galleta hashdeep dc3dd dcfldd extundelete missidentify pst-utils reglookup ddrescue guymager pdfid pdf-parser foremost magicrescue \
-            pasco pev recoverjpeg rifiuti rifiuti2 safecopy calpel scrounge-ntfs cutycapt pipal recordmydeskto
+            pasco pev recoverjpeg rifiuti rifiuti2 safecopy calpel scrounge-ntfs cutycapt pipal recordmydesktop
 
             # Red
             yay -S --noconfirm --needed nmap wireshark metasploit burpsuite python-dnsrecon aircrack nfs-utils blackarch/ffuf blackarch/dirb blackarch/autorecon 
