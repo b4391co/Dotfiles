@@ -106,8 +106,11 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
             ~/.fzf/install
             if [ $realVM = "2" ]
             then
+                cd $pwd
                 wget https://releases.warp.dev/stable/v0.2024.02.20.08.01.stable_02/warp-terminal-v0.2024.02.20.08.01.stable_02-1-x86_64.pkg.tar.zst
                 sudo pacman -U warp-terminal-v0.2024.02.20.08.01.stable_02-1-x86_64.pkg.tar.zst
+                rm warp-terminal-v0.2024.02.20.08.01.stable_02-1-x86_64.pkg.tar.zst
+                cp ./config/warp-terminal ~/.config/ -r
                 sudo pacman -S open-vm-tools --noconfirm --needed
                 sudo pacman -S xf86-video-vmware xf86-input-vmmouse --noconfirm --needed
                 sudo systemctl enable --now vmtoolsd

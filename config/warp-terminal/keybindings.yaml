@@ -1,0 +1,21 @@
+---
+"pane_group:add_up": ctrl-alt-up
+"pane_group:add_left": ctrl-alt-left
+"pane_group:navigate_up": alt-w
+"editor_view:move_to_line_end": ctrl-e
+"pane_group:navigate_right": alt-d
+"terminal:warpify_subshell": ctrl-shift-U
+"workspace:shift_focus_right": alt-left
+"pane_group:add_right": ctrl-alt-right
+"editor_view:move_forward_one_subword": none
+"editor_view:select_all": ctrl-shift-A
+"editor_view:cut_word_left": none
+"workspace:shift_focus_left": alt-right
+"pane_group:navigate_left": alt-a
+"editor_view:move_to_line_start": ctrl-a
+"terminal:clear_blocks": none
+"editor_view:move_backward_one_subword": none
+"pane_group:navigate_down": alt-s
+"editor_view:cut_word_right": none
+"pane_group:add_down": ctrl-alt-down
+"workspace:toggle_warp_drive": ctrl-shift-D
