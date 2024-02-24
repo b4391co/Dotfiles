@@ -42,7 +42,7 @@ read selec
             logo
             printf "[ + ] ( 1"; if [ $app = '1' ] ; then printf '*'; fi; printf " ) - Yay , Paru & blackharch \n"
             printf "[ + ] ( 2"; if [ $app = '2' ] ; then printf '*'; fi; printf " ) - apps basicas [yay]\n"
-            printf "[ + ] ( 3"; if [ $app = '3' ] ; then printf '*'; fi; printf " ) - Install zsh, omzsh\n"
+            printf "[ + ] ( 3"; if [ $app = '3' ] ; then printf '*'; fi; printf " ) - Install zsh, omzsh, warp terminal\n"
             printf "[ + ] ( 4"; if [ $app = '4' ] ; then printf '*'; fi; printf " ) - vscode\n"
             printf "[ + ] ( 5"; if [ $app = '5' ] ; then printf '*'; fi; printf " ) - Hacking/Networks [blackarch]\n"
             printf "[ + ] ( 6"; if [ $app = '6' ] ; then printf '*'; fi; printf " ) - Docker\n"
@@ -106,6 +106,8 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
             ~/.fzf/install
             if [ $realVM = "2" ]
             then
+                wget https://releases.warp.dev/stable/v0.2024.02.20.08.01.stable_02/warp-terminal-v0.2024.02.20.08.01.stable_02-1-x86_64.pkg.tar.zst
+                sudo pacman -U warp-terminal-v0.2024.02.20.08.01.stable_02-1-x86_64.pkg.tar.zst
                 sudo pacman -S open-vm-tools --noconfirm --needed
                 sudo pacman -S xf86-video-vmware xf86-input-vmmouse --noconfirm --needed
                 sudo systemctl enable --now vmtoolsd
@@ -177,7 +179,7 @@ source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
             sudo curl -o /usr/share/webshells/php/p0wny.php https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php
 
             # osint
-            yay -S --noconfirm --needed blackarch/sherlock gobuster bind blackarch/osint-spy blackarch/maltego blackarch/h8mail extra/sn0int extra/perl-image-exiftool aur/jexiftoolgui
+            yay -S --noconfirm --needed blackarch/sherlock blackarch/osintgram gobuster bind blackarch/osint-spy blackarch/maltego blackarch/h8mail extra/sn0int extra/perl-image-exiftool aur/jexiftoolgui
             pip install pandas requests_futures torrequest netifaces
             git clone https://github.com/i3visio/osrframework.git
             cd osrframework
