@@ -6,7 +6,7 @@
         "layer": "top",
         "position": "top",
         "mod": "dock",
-        "height": 21,
+        "height": 35,
         "exclusive": true,
         "passthrough": false,
         "gtk-layer-shell": true,
@@ -14,8 +14,8 @@
     
     // positions generated based on config.ctl //
     
-        "modules-left": ["custom/padd","custom/l_end","clock","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
-        "modules-right": ["custom/padd","custom/l_end","custom/eth1","custom/tun0","custom/rpi0","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/mode","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
+        "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
+        "modules-right": ["custom/padd","custom/l_end","custom/eth1","custom/tun0","custom/rpi0","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/clock","custom/r_end","custom/l_end","custom/wallchange","custom/mode","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
     
     
     // sourced from modules based on config.ctl //
@@ -225,7 +225,12 @@
             "interval" : 5, // once every day
             "tooltip": true
         },
-    
+        "custom/clock": {
+          "format" : "{}",
+          "exec" : "date | awk '{print $5}'",
+          "interval" : 3,
+          "tooltip": true 
+        }, 
     
     // modules for padding //
     
