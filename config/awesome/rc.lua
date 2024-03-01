@@ -455,7 +455,7 @@ end,
             {description = "decrease window width factor", group = "window"}),
     
 
-    awful.key({ super }, "n",
+    awful.key({ super, "Control" }, "n",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
@@ -547,7 +547,7 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "screen"}),
     awful.key({ alt,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "window"}),
-    awful.key({ alt,           }, "n",
+    awful.key({ super,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
