@@ -134,7 +134,7 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
 source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
             
             echo "@reboot echo "0" > ~/.startcounter
-0 */6 * * * /usr/bin/yay -Syu --noconfirm" > /var/spool/cron/$username
+0 */6 * * * /usr/bin/yay -Syu --noconfirm" > /var/spool/'cron'/$username
 
             yay -S --noconfirm --needed zsh-theme-powerlevel10k-git
             sudo pacman -S powerline-common awesome-terminal-fonts --noconfirm --needed
