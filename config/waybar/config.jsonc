@@ -15,7 +15,7 @@
     // positions generated based on config.ctl //
     
         "modules-left": ["custom/padd","custom/l_end","clock","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
-        "modules-right": ["custom/padd","custom/l_end","custom/eth1","custom/tun0","custom/rpi0","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/mode","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
+        "modules-right": ["custom/padd","custom/l_end","custom/eth1","custom/tun0","custom/rpi0","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/time","custom/r_end","custom/l_end","custom/wallchange","custom/mode","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
     
     
     // sourced from modules based on config.ctl //
@@ -75,6 +75,11 @@
             "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
         },
     
+    "custom/time":{
+        "exec": "date +'%H:%M'",
+        "interval": 2
+    },
+
     "custom/gpuinfo": {
       "exec": " ~/.config/hypr/scripts/gpuinfo.sh",
       "return-type": "json",
