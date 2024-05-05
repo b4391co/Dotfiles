@@ -300,9 +300,13 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         fi
         if [ $app = "7" ]
         then
-            cd $pwd 
+            cd $pwd
             # PHP - Composer
             yay -S --noconfirm --needed aur/mongodb-compass extra/composer php-mongodb
+
+            # PHP - Symfony
+            yay -S --noconfirm --needed aur/symfony-cli aur/php56-iconv
+            sudo sed -i 's/;extension=iconv/extension=iconv/g' /etc/php/php.ini
         fi
     done
     while [ $selec = "2" ]
