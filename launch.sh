@@ -307,6 +307,9 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             # PHP - Symfony
             yay -S --noconfirm --needed aur/symfony-cli aur/php56-iconv
             sudo sed -i 's/;extension=iconv/extension=iconv/g' /etc/php/php.ini
+            sudo sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/php.ini
+            sudo sed -i 's/;extension=pdo_mysql/extension=pdo_mysql/g' /etc/php/php.ini
+
         fi
     done
     while [ $selec = "2" ]
@@ -399,6 +402,10 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             yay -S --noconfirm --needed hyprland dolphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
             yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub extra/dunst
             cp config/* ~/.config/ -r
+            sudo pacman -R xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+            sudo pacman -S --noconfirm --needed pipewire wireplumber grim slurp
+            yay -S --noconfirm --needed xdg-desktop-portal-hyprland-git extra/xwaylandvideobridge
+            echo "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" >> ~/.config/hypr/hyprland.conf
         fi
         if [ $app = "3" ]
         then
