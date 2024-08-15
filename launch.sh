@@ -325,6 +325,7 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             printf "[ + ] ( 1"; if [ $app = '1' ] ; then printf '*'; fi; printf " ) - Awesome [Paru]\n"
             printf "[ + ] ( 2"; if [ $app = '2' ] ; then printf '*'; fi; printf " ) - HyperLand [ no virtual machine ]\n"
             printf "[ + ] ( 3"; if [ $app = '3' ] ; then printf '*'; fi; printf " ) - fonts [yay]\n"
+            printf "[ + ] ( 4"; if [ $app = '4' ] ; then printf '*'; fi; printf " ) - Drivers ( red, bluetooth, keys ) [yay]\n"
             printf "[ + ] ( T"; if [ $app = 'T' ] ; then printf '*'; fi; printf " ) - All\n"
             printf "[ + ] ( X"; if [ $app = 'X' ] ; then printf '*'; fi; printf " ) - close\n"
             echo ""
@@ -396,7 +397,7 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         fi
         if [ $app = "2" ]
         then
-            yay -S --noconfirm --needed hyprland dolphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
+            yay -S --noconfirm --needed hyprland doxlphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
             yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub extra/dunst
             cp config/* ~/.config/ -r
         fi
@@ -418,6 +419,22 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             unzip iosevka.zip
             cd $pwd
             sudo rm -rfv *.ttf EOT OTF TTF WOFF WOFF2 *.zip
+        fi
+        if [ $app = "4" ]
+        then
+            sudo pacman -S bluez bluez-utils blueman base-devel xev  --noconfirm --needed
+            sudo pacman -S iw iwd intel-ucode --noconfirm --needed
+            sudo pacman -S --noconfirm --needed gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav ffmpeg4.4 libva-intel-driver libva-vdpau-driver
+
+            sudo pacman -S --noconfirm --needed base-devel linux-headers linux-firmware intel-ucode iwd networkmanager bluez bluez-utils pulseaudio alsa-utils pavucontrol sof-firmware mesa vulkan-intel xf86-video-intel xorg-server xorg-xinit acpi acpid acpi_call tlp fwupd libinput xf86-input-libinput gnome-keyring libgnome-keyring xclip xdg-utils xdg-user-dirs
+
+            sudo systemctl start bluetooth
+            sudo systemctl enable bluetooth
+            sudo systemctl enable NetworkManager
+            sudo systemctl start NetworkManager
+            sudo rfkill unblock wifi
+
+
         fi
         if [ $app = "X" ]
         then
