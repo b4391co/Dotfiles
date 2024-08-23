@@ -101,7 +101,8 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
             git clone https://github.com/XDeadHackerX/NetSoc_OSINT
             cd NetSoc_OSINT
             chmod 777 netsoc_osint.sh
-            git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+            git clone https://github.com/LazyVim/starter ~/.config/nvim
+            rm -rf ~/.config/nvim/.git
             git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
             ~/.fzf/install
             if [ $realVM = "2" ]
@@ -433,7 +434,9 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             sudo pacman -S --noconfirm --needed gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav ffmpeg4.4 libva-intel-driver libva-vdpau-driver
 
             sudo pacman -S --noconfirm --needed base-devel linux-headers linux-firmware intel-ucode iwd networkmanager bluez bluez-utils pulseaudio alsa-utils pavucontrol sof-firmware mesa vulkan-intel xf86-video-intel xorg-server xorg-xinit acpi acpid acpi_call tlp fwupd libinput xf86-input-libinput gnome-keyring libgnome-keyring xclip xdg-utils xdg-user-dirs
+            sudo pacman -S --noconfirm --needed pipewire pipewire-pulse pipewire-alsa pipewire-jack
 
+            systemctl --user enable --now pipewire
             sudo systemctl start bluetooth
             sudo systemctl enable bluetooth
             sudo systemctl enable NetworkManager
