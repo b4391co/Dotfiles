@@ -134,7 +134,7 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
 source "/usr/share/fzf/key-bindings.zsh"' >> ~/.fzf.zsh
             
             echo "@reboot echo "0" > ~/.startcounter
-0 */6 * * * /usr/bin/yay -Syu --noconfirm" > /var/spool/'cron'/$username
+0 */6 * * * /usr/bin/yay -Syu --noconfirm" > /var/spool/cron/$username
 
             yay -S --noconfirm --needed zsh-theme-powerlevel10k-git
             sudo pacman -S powerline-common awesome-terminal-fonts --noconfirm --needed
@@ -307,6 +307,9 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             # PHP - Symfony
             yay -S --noconfirm --needed aur/symfony-cli aur/php56-iconv
             sudo sed -i 's/;extension=iconv/extension=iconv/g' /etc/php/php.ini
+            sudo sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/php.ini
+            sudo sed -i 's/;extension=pdo_mysql/extension=pdo_mysql/g' /etc/php/php.ini
+
         fi
     done
     while [ $selec = "2" ]
@@ -325,7 +328,6 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             printf "[ + ] ( 1"; if [ $app = '1' ] ; then printf '*'; fi; printf " ) - Awesome [Paru]\n"
             printf "[ + ] ( 2"; if [ $app = '2' ] ; then printf '*'; fi; printf " ) - HyperLand [ no virtual machine ]\n"
             printf "[ + ] ( 3"; if [ $app = '3' ] ; then printf '*'; fi; printf " ) - fonts [yay]\n"
-            printf "[ + ] ( 4"; if [ $app = '4' ] ; then printf '*'; fi; printf " ) - Drivers ( red, bluetooth, keys ) [yay]\n"
             printf "[ + ] ( T"; if [ $app = 'T' ] ; then printf '*'; fi; printf " ) - All\n"
             printf "[ + ] ( X"; if [ $app = 'X' ] ; then printf '*'; fi; printf " ) - close\n"
             echo ""
@@ -397,9 +399,13 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         fi
         if [ $app = "2" ]
         then
-            yay -S --noconfirm --needed hyprland doxlphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
+            yay -S --noconfirm --needed hyprland dolphin wofi hyprpaper rofi-lbonn-wayland-git waybar swww swaylock-effects-git wlogout nwg-look kvantum qt5ct
             yay -S --noconfirm --needed brightnessctl grim pamixer dunstify swappy slurp alsa update-grub extra/dunst
             cp config/* ~/.config/ -r
+            sudo pacman -R xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+            sudo pacman -S --noconfirm --needed pipewire wireplumber grim slurp
+            yay -S --noconfirm --needed xdg-desktop-portal-hyprland-git extra/xwaylandvideobridge
+            echo "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" >> ~/.config/hypr/hyprland.conf
         fi
         if [ $app = "3" ]
         then
@@ -422,7 +428,7 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
         fi
         if [ $app = "4" ]
         then
-            sudo pacman -S bluez bluez-utils blueman base-devel xev  --noconfirm --needed
+            sudo pacman -S bluez bluez-utils blueman base-devel xev blueman  --noconfirm --needed
             sudo pacman -S iw iwd intel-ucode --noconfirm --needed
             sudo pacman -S --noconfirm --needed gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav ffmpeg4.4 libva-intel-driver libva-vdpau-driver
 
@@ -433,8 +439,6 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             sudo systemctl enable NetworkManager
             sudo systemctl start NetworkManager
             sudo rfkill unblock wifi
-
-
         fi
         if [ $app = "X" ]
         then
