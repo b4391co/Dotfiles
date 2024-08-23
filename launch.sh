@@ -101,7 +101,8 @@ fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
             git clone https://github.com/XDeadHackerX/NetSoc_OSINT
             cd NetSoc_OSINT
             chmod 777 netsoc_osint.sh
-            git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+            git clone https://github.com/LazyVim/starter ~/.config/nvim
+            rm -rf ~/.config/nvim/.git
             git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
             ~/.fzf/install
             if [ $realVM = "2" ]
