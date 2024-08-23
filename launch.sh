@@ -426,6 +426,20 @@ censys_secret = "api_key"' | tee -a ~/.osintui/config/config.toml
             cd $pwd
             sudo rm -rfv *.ttf EOT OTF TTF WOFF WOFF2 *.zip
         fi
+        if [ $app = "4" ]
+        then
+            sudo pacman -S bluez bluez-utils blueman base-devel xev blueman  --noconfirm --needed
+            sudo pacman -S iw iwd intel-ucode --noconfirm --needed
+            sudo pacman -S --noconfirm --needed gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav ffmpeg4.4 libva-intel-driver libva-vdpau-driver
+
+            sudo pacman -S --noconfirm --needed base-devel linux-headers linux-firmware intel-ucode iwd networkmanager bluez bluez-utils pulseaudio alsa-utils pavucontrol sof-firmware mesa vulkan-intel xf86-video-intel xorg-server xorg-xinit acpi acpid acpi_call tlp fwupd libinput xf86-input-libinput gnome-keyring libgnome-keyring xclip xdg-utils xdg-user-dirs
+
+            sudo systemctl start bluetooth
+            sudo systemctl enable bluetooth
+            sudo systemctl enable NetworkManager
+            sudo systemctl start NetworkManager
+            sudo rfkill unblock wifi
+        fi
         if [ $app = "X" ]
         then
             selec=0
